@@ -12,6 +12,7 @@ export interface IDataProviderProps {
 
 export interface IDataProviderDataProps {
   connections: Connection[];
+  clearConnections: () => void;
 }
 
 export const DataProvider: React.FC<IDataProviderProps> = ({
@@ -64,5 +65,11 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
     });
   }, []);
 
-  return connections ? children({ connections, ...otherProps }) : null;
+  return connections
+    ? children({
+        connections,
+        clearConnections: () => setConnections([]),
+        ...otherProps,
+      })
+    : null;
 };
