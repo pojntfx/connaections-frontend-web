@@ -16,14 +16,17 @@ export const App: React.FC<IAppProps> = ({
   <LoginProvider clientId={clientId} {...otherProps}>
     {({ token }) => (
       <DataProvider endpoint={endpoint} token={token}>
-        {({ connections }) => {
+        {({ connections, clearConnections }) => {
           console.log(connections.length);
 
           return (
-            <ConnectionInterpreter
-              connections={connections}
-              geoUrl="https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
-            />
+            <>
+              <button onClick={clearConnections}>Clear</button>
+              <ConnectionInterpreter
+                connections={connections}
+                geoUrl="https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
+              />
+            </>
           );
         }}
       </DataProvider>
