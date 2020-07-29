@@ -17,15 +17,13 @@ export const App: React.FC<IAppProps> = ({
       <DataProvider initialEndpoint={initialEndpoint} token={token}>
         {({ connections }) => (
           <ul>
-            {connections
-              .filter((connection) => connection.getDstcountry() != "ZZ")
-              .map((connection, index) => (
-                <li key={index}>
-                  {connection.getSrccountry()} ({connection.getSrcip()}:
-                  {connection.getSrcport()}) {`=>`} {connection.getDstcountry()}{" "}
-                  ({connection.getDstip()}:{connection.getDstport()})
-                </li>
-              ))}
+            {connections.map((connection, index) => (
+              <li key={index}>
+                {connection.getSrccountry()} ({connection.getSrcip()}:
+                {connection.getSrcport()}) {`=>`} {connection.getDstcountry()} (
+                {connection.getDstip()}:{connection.getDstport()})
+              </li>
+            ))}
           </ul>
         )}
       </DataProvider>
