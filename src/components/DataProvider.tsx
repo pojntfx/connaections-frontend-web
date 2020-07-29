@@ -33,7 +33,11 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
     stream.on("data", (newConnection) => {
       if (
         newConnection.getSource().getCountrycode() == "" ||
-        newConnection.getDst().getCountrycode() == ""
+        newConnection.getDst().getCountrycode() == "" ||
+        (newConnection.getSource().getLongitude() ==
+          newConnection.getDst().getLongitude() &&
+          newConnection.getSource().getLatitude() ==
+            newConnection.getDst().getLatitude())
       ) {
         return;
       }
