@@ -10,12 +10,12 @@ import {
 } from "react-simple-maps";
 
 export interface IConnectionInterpreterProps {
-  connection: Connection;
+  connections: Connection[];
   geoUrl: string;
 }
 
 export const ConnectionInterpreter: React.FC<IConnectionInterpreterProps> = ({
-  connection,
+  connections,
   geoUrl,
   ...otherProps
 }) => (
@@ -41,19 +41,22 @@ export const ConnectionInterpreter: React.FC<IConnectionInterpreterProps> = ({
           ))
         }
       </Geographies>
-      <Line
-        from={[
-          connection.getSource().getLongitude(),
-          connection.getSource().getLatitude(),
-        ]}
-        to={[
-          connection.getDst().getLongitude(),
-          connection.getDst().getLatitude(),
-        ]}
-        stroke="#FF5533"
-        strokeWidth={4}
-        strokeLinecap="round"
-      />
+      {connections.map((connection, index) => (
+        <Line
+          from={[
+            connection.getSource().getLongitude(),
+            connection.getSource().getLatitude(),
+          ]}
+          to={[
+            connection.getDst().getLongitude(),
+            connection.getDst().getLatitude(),
+          ]}
+          stroke="#FF5533"
+          strokeWidth={2}
+          strokeLinecap="round"
+          key={index}
+        />
+      ))}
     </ZoomableGroup>
   </ComposableMap>
 );
