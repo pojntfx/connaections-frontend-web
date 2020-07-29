@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Connection } from "../proto/generated/src/proto/connections_pb";
+import styled from "styled-components";
 
 export interface IConnectionsListProps {
   connections: Connection[];
@@ -9,7 +10,7 @@ export const ConnectionsList: React.FC<IConnectionsListProps> = ({
   connections,
   ...otherProps
 }) => (
-  <table {...otherProps}>
+  <Table {...otherProps}>
     <thead>
       <tr>
         <th>Source</th>
@@ -38,5 +39,10 @@ export const ConnectionsList: React.FC<IConnectionsListProps> = ({
         );
       })}
     </tbody>
-  </table>
+  </Table>
 );
+
+const Table = styled.table`
+  display: block;
+  overflow-x: auto;
+`;
