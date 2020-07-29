@@ -39,6 +39,10 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
     const stream = client.subscribe(new Connection(), headers);
 
     stream.on("data", async (msg: IIdentifiableConnection) => {
+      if (msg.getDstcountry() == "ZZ") {
+        return;
+      }
+
       msg.id = v4();
 
       setConnections((oldConnections) => [...oldConnections, msg]);
@@ -47,7 +51,7 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
         setConnections((oldConnections) =>
           oldConnections.filter((connection) => connection.id != msg.id)
         );
-      }, 100);
+      }, 1000);
     });
   }, [endpoint]);
 
