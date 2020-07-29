@@ -9,12 +9,12 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 
-export interface IConnectionInterpreterProps {
+export interface IConnectionsMapProps {
   connections: Connection[];
   geoUrl: string;
 }
 
-export const ConnectionInterpreter: React.FC<IConnectionInterpreterProps> = ({
+export const ConnectionsMap: React.FC<IConnectionsMapProps> = ({
   connections,
   geoUrl,
   ...otherProps
