@@ -54,6 +54,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:16.9.8"
       ],
       [
+        "@types/uuid",
+        "npm:8.0.0"
+      ],
+      [
         "@yarnpkg/pnpify",
         "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"
       ],
@@ -88,6 +92,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "typescript",
         "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"
+      ],
+      [
+        "uuid",
+        "npm:8.3.0"
       ]
     ],
     "locationBlacklistData": [
@@ -103,6 +111,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
+            ["@types/uuid", "npm:8.0.0"],
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
@@ -111,7 +120,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
             ["ts-protoc-gen", "npm:0.12.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"],
+            ["uuid", "npm:8.3.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -2855,6 +2865,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/uuid", [
+        ["npm:8.0.0", {
+          "packageLocation": "./.yarn/cache/@types-uuid-npm-8.0.0-904217d00f-a1d9530396.zip/node_modules/@types/uuid/",
+          "packageDependencies": [
+            ["@types/uuid", "npm:8.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@yarnpkg/core", [
         ["npm:2.1.1", {
           "packageLocation": "./.yarn/cache/@yarnpkg-core-npm-2.1.1-6708e55dd7-d01e24bde1.zip/node_modules/@yarnpkg/core/",
@@ -4115,6 +4134,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
+            ["@types/uuid", "npm:8.0.0"],
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
@@ -4123,7 +4143,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
             ["ts-protoc-gen", "npm:0.12.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
+            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"],
+            ["uuid", "npm:8.3.0"]
           ],
           "linkType": "SOFT",
         }]
@@ -10169,6 +10190,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/uuid-npm-3.4.0-4fd8ef88ad-1ce3f37e21.zip/node_modules/uuid/",
           "packageDependencies": [
             ["uuid", "npm:3.4.0"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:8.3.0", {
+          "packageLocation": "./.yarn/cache/uuid-npm-8.3.0-2f98335399-a2bdb8a3eb.zip/node_modules/uuid/",
+          "packageDependencies": [
+            ["uuid", "npm:8.3.0"]
           ],
           "linkType": "HARD",
         }]

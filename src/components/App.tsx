@@ -1,5 +1,6 @@
 import * as React from "react";
 import { LoginProvider } from "./LoginProvider";
+import { DataProvider } from "./DataProvider";
 
 export interface IAppProps {
   initialClientId: string;
@@ -12,6 +13,22 @@ export const App: React.FC<IAppProps> = ({
   ...otherProps
 }) => (
   <LoginProvider initialClientId={initialClientId} {...otherProps}>
-    {({ token }) => <div>{token}</div>}
+    {({ token }) => (
+      <DataProvider initialEndpoint={initialEndpoint} token={token}>
+        {({ connections }) => (
+          <ul>
+            {connections
+              .filter((connection) => connection.getDstcountry() != "ZZ")
+              .map((connection, index) => (
+                <li key={index}>
+                  {connection.getSrccountry()} ({connection.getSrcip()}:
+                  {connection.getSrcport()}) {`=>`} {connection.getDstcountry()}{" "}
+                  ({connection.getDstip()}:{connection.getDstport()})
+                </li>
+              ))}
+          </ul>
+        )}
+      </DataProvider>
+    )}
   </LoginProvider>
 );
