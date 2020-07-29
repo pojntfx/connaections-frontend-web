@@ -10,7 +10,7 @@ import {
 } from "react-simple-maps";
 
 export interface IConnectionsMapProps {
-  connections: Connection[];
+  connections: [Connection, string][];
   geoUrl: string;
 }
 
@@ -44,14 +44,14 @@ export const ConnectionsMap: React.FC<IConnectionsMapProps> = ({
       {connections.map((connection, index) => (
         <Line
           from={[
-            connection.getSource().getLongitude(),
-            connection.getSource().getLatitude(),
+            connection[0].getSource().getLongitude(),
+            connection[0].getSource().getLatitude(),
           ]}
           to={[
-            connection.getDst().getLongitude(),
-            connection.getDst().getLatitude(),
+            connection[0].getDst().getLongitude(),
+            connection[0].getDst().getLatitude(),
           ]}
-          stroke="#FF5533"
+          stroke={connection[1]}
           strokeWidth={2}
           strokeLinecap="round"
           key={index}
