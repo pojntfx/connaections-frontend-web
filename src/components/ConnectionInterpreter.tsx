@@ -6,6 +6,7 @@ import {
   Geographies,
   Geography,
   Line,
+  ZoomableGroup,
 } from "react-simple-maps";
 
 export interface IConnectionInterpreterProps {
@@ -26,29 +27,33 @@ export const ConnectionInterpreter: React.FC<IConnectionInterpreterProps> = ({
     }}
     {...otherProps}
   >
-    <Graticule stroke="#DDD" />
-    <Geographies
-      geography={geoUrl}
-      fill="#D6D6DA"
-      stroke="#FFFFFF"
-      strokeWidth={0.5}
-    >
-      {({ geographies }) =>
-        geographies.map((geo) => <Geography key={geo.rsmKey} geography={geo} />)
-      }
-    </Geographies>
-    <Line
-      from={[
-        connection.getSource().getLongitude(),
-        connection.getSource().getLatitude(),
-      ]}
-      to={[
-        connection.getDst().getLongitude(),
-        connection.getDst().getLatitude(),
-      ]}
-      stroke="#FF5533"
-      strokeWidth={4}
-      strokeLinecap="round"
-    />
+    <ZoomableGroup zoom={1}>
+      <Graticule stroke="#DDD" />
+      <Geographies
+        geography={geoUrl}
+        fill="#D6D6DA"
+        stroke="#FFFFFF"
+        strokeWidth={0.5}
+      >
+        {({ geographies }) =>
+          geographies.map((geo) => (
+            <Geography key={geo.rsmKey} geography={geo} />
+          ))
+        }
+      </Geographies>
+      <Line
+        from={[
+          connection.getSource().getLongitude(),
+          connection.getSource().getLatitude(),
+        ]}
+        to={[
+          connection.getDst().getLongitude(),
+          connection.getDst().getLatitude(),
+        ]}
+        stroke="#FF5533"
+        strokeWidth={4}
+        strokeLinecap="round"
+      />
+    </ZoomableGroup>
   </ComposableMap>
 );
