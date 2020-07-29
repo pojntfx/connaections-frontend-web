@@ -3,9 +3,6 @@ import * as ReactDOM from "react-dom";
 import { App } from "./src/components/App";
 
 ReactDOM.render(
-  <App
-    initialEndpoint={process.env.INITIAL_ENDPOINT}
-    initialClientId={process.env.INITIAL_CLIENT_ID}
-  />,
+  <App endpoint={process.env.ENDPOINT} clientId={process.env.CLIENT_ID} />,
   document.getElementById("root")
 );
