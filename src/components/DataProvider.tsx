@@ -2,6 +2,7 @@ import * as React from "react";
 import { Connection } from "../proto/generated/src/proto/connections_pb";
 import { BrowserHeaders } from "browser-headers";
 import { ConnectionsClient } from "../proto/generated/src/proto/connections_pb_service";
+import _ from "lodash";
 
 export interface IDataProviderProps {
   token: string;
@@ -10,7 +11,7 @@ export interface IDataProviderProps {
 }
 
 export interface IDataProviderDataProps {
-  connection: Connection;
+  connections: Connection[];
 }
 
 export const DataProvider: React.FC<IDataProviderProps> = ({
@@ -19,7 +20,7 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
   children,
   ...otherProps
 }) => {
-  const [connection, setConnection] = React.useState<Connection>();
+  const [connections, setConnections] = React.useState<Connection[]>([]);
 
   React.useEffect(() => {
     const headers = new BrowserHeaders({
@@ -42,9 +43,18 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
         return;
       }
 
-      setConnection(newConnection);
+      setConnections((oldConnections) =>
+        _.uniqWith(
+          [...oldConnections, newConnection],
+          (a, b) =>
+            a.getSource().getLongitude() == b.getSource().getLongitude() &&
+            a.getSource().getLatitude() == b.getSource().getLatitude() &&
+            a.getDst().getLongitude() == b.getDst().getLongitude() &&
+            a.getDst().getLatitude() == b.getDst().getLatitude()
+        )
+      );
     });
   }, []);
 
-  return connection ? children({ connection, ...otherProps }) : null;
+  return connections ? children({ connections, ...otherProps }) : null;
 };

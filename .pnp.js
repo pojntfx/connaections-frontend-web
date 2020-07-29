@@ -42,6 +42,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:3.7.2"
       ],
       [
+        "@types/lodash",
+        "npm:4.14.158"
+      ],
+      [
         "@types/node",
         "npm:14.0.27"
       ],
@@ -68,6 +72,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "google-protobuf",
         "npm:3.12.4"
+      ],
+      [
+        "lodash",
+        "npm:4.17.19"
       ],
       [
         "parcel",
@@ -112,6 +120,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.10.5"],
             ["@improbable-eng/grpc-web", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:0.13.0"],
             ["@types/google-protobuf", "npm:3.7.2"],
+            ["@types/lodash", "npm:4.14.158"],
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
@@ -119,6 +128,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
+            ["lodash", "npm:4.17.19"],
             ["parcel", "npm:2.0.0-beta.1"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
@@ -2806,6 +2816,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/lodash", [
+        ["npm:4.14.158", {
+          "packageLocation": "./.yarn/cache/@types-lodash-npm-4.14.158-ddc174121c-edee47e7db.zip/node_modules/@types/lodash/",
+          "packageDependencies": [
+            ["@types/lodash", "npm:4.14.158"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/minimatch", [
         ["npm:3.0.3", {
           "packageLocation": "./.yarn/cache/@types-minimatch-npm-3.0.3-c8b0625f84-672ccdac19.zip/node_modules/@types/minimatch/",
@@ -4158,6 +4177,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", "npm:7.10.5"],
             ["@improbable-eng/grpc-web", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:0.13.0"],
             ["@types/google-protobuf", "npm:3.7.2"],
+            ["@types/lodash", "npm:4.14.158"],
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
@@ -4165,6 +4185,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
+            ["lodash", "npm:4.17.19"],
             ["parcel", "npm:2.0.0-beta.1"],
             ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],

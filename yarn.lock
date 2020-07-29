@@ -2313,6 +2313,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.14.158":
+  version: 4.14.158
+  resolution: "@types/lodash@npm:4.14.158"
+  checksum: edee47e7db1f073350433972573050bc6689ccceb0fcc0bf95657477ea1715e4f63e2821499daecc6dc498577b244d9e2cfdf7e12e03cabae881c90b8bebb691
+  languageName: node
+  linkType: hard
+
 "@types/minimatch@npm:*":
   version: 3.0.3
   resolution: "@types/minimatch@npm:3.0.3"
@@ -3512,6 +3519,7 @@ __metadata:
     "@babel/core": ^7.10.5
     "@improbable-eng/grpc-web": ^0.13.0
     "@types/google-protobuf": ^3.7.2
+    "@types/lodash": ^4.14.158
     "@types/node": ^14.0.27
     "@types/react": ^16.9.43
     "@types/react-dom": ^16.9.8
@@ -3519,6 +3527,7 @@ __metadata:
     "@yarnpkg/pnpify": ^2.1.0
     browser-headers: ^0.4.1
     google-protobuf: ^3.12.4
+    lodash: ^4.17.19
     parcel: next
     prop-types: ^15.7.2
     react: ^16.13.1
