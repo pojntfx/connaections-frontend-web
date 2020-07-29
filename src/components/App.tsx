@@ -3,28 +3,27 @@ import { LoginProvider } from "./LoginProvider";
 import { DataProvider } from "./DataProvider";
 
 export interface IAppProps {
-  initialClientId: string;
-  initialEndpoint: string;
+  clientId: string;
+  endpoint: string;
 }
 
 export const App: React.FC<IAppProps> = ({
-  initialClientId,
-  initialEndpoint,
+  clientId,
+  endpoint,
   ...otherProps
 }) => (
-  <LoginProvider initialClientId={initialClientId} {...otherProps}>
+  <LoginProvider clientId={clientId} {...otherProps}>
     {({ token }) => (
-      <DataProvider initialEndpoint={initialEndpoint} token={token}>
-        {({ connections }) => (
-          <ul>
-            {connections.map((connection, index) => (
-              <li key={index}>
-                {connection.getSrccountry()} ({connection.getSrcip()}:
-                {connection.getSrcport()}) {`=>`} {connection.getDstcountry()} (
-                {connection.getDstip()}:{connection.getDstport()})
-              </li>
-            ))}
-          </ul>
+      <DataProvider endpoint={endpoint} token={token}>
+        {({ connection }) => (
+          <>
+            {connection.getSource().getCountrycode()},
+            {connection.getSource().getLatitude()},
+            {connection.getSource().getLongitude()} {`=>`}{" "}
+            {connection.getDst().getCountrycode()},
+            {connection.getDst().getLatitude()},
+            {connection.getDst().getLongitude()}
+          </>
         )}
       </DataProvider>
     )}
