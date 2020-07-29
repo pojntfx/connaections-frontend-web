@@ -58,7 +58,9 @@ export const App: React.FC<IAppProps> = ({
 
                   <section id="list">
                     <h2>Connection List</h2>
-                    <ConnectionsList connections={connectionsWithColors} />
+                    <ConnectionsList
+                      connections={connectionsWithColors.reverse()}
+                    />
                   </section>
                 </Aside>
               </Main>
