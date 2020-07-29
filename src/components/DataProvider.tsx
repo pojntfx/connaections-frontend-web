@@ -20,7 +20,12 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
   children,
   ...otherProps
 }) => {
-  const [connections, setConnections] = React.useState<Connection[]>([]);
+  const [connections, _setConnections] = React.useState<Connection[]>([]);
+  const connectionsRef = React.useRef(connections);
+  const setConnections = (newConnections: Connection[]) => {
+    connectionsRef.current = newConnections;
+    _setConnections(newConnections);
+  };
 
   React.useEffect(() => {
     const headers = new BrowserHeaders({
@@ -43,16 +48,19 @@ export const DataProvider: React.FC<IDataProviderProps> = ({
         return;
       }
 
-      setConnections((oldConnections) =>
-        _.uniqWith(
-          [...oldConnections, newConnection],
-          (a, b) =>
-            a.getSource().getLongitude() == b.getSource().getLongitude() &&
-            a.getSource().getLatitude() == b.getSource().getLatitude() &&
-            a.getDst().getLongitude() == b.getDst().getLongitude() &&
-            a.getDst().getLatitude() == b.getDst().getLatitude()
-        )
+      const newConnections = _.uniqWith(
+        [...connectionsRef.current, newConnection],
+        (a, b) =>
+          a.getSource().getLongitude() == b.getSource().getLongitude() &&
+          a.getSource().getLatitude() == b.getSource().getLatitude() &&
+          a.getDst().getLongitude() == b.getDst().getLongitude() &&
+          a.getDst().getLatitude() == b.getDst().getLatitude()
       );
+      if (newConnections.length == connectionsRef.current.length) {
+        return;
+      }
+
+      setConnections(newConnections);
     });
   }, []);
 
