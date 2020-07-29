@@ -54,6 +54,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:16.9.8"
       ],
       [
+        "@types/react-simple-maps",
+        "npm:1.0.3"
+      ],
+      [
         "@yarnpkg/pnpify",
         "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"
       ],
@@ -70,6 +74,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:2.0.0-beta.1"
       ],
       [
+        "prop-types",
+        "npm:15.7.2"
+      ],
+      [
         "react",
         "npm:16.13.1"
       ],
@@ -80,6 +88,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "react-google-login",
         "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"
+      ],
+      [
+        "react-simple-maps",
+        "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.2"
       ],
       [
         "ts-protoc-gen",
@@ -103,13 +115,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
+            ["@types/react-simple-maps", "npm:1.0.3"],
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
             ["parcel", "npm:2.0.0-beta.1"],
+            ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
+            ["react-simple-maps", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.2"],
             ["ts-protoc-gen", "npm:0.12.0"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -2724,11 +2739,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/d3-geo", [
+        ["npm:1.11.1", {
+          "packageLocation": "./.yarn/cache/@types-d3-geo-npm-1.11.1-bc9e130cc6-cb188287db.zip/node_modules/@types/d3-geo/",
+          "packageDependencies": [
+            ["@types/d3-geo", "npm:1.11.1"],
+            ["@types/geojson", "npm:7946.0.7"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/emscripten", [
         ["npm:1.39.4", {
           "packageLocation": "./.yarn/cache/@types-emscripten-npm-1.39.4-4d03380faa-b848421e25.zip/node_modules/@types/emscripten/",
           "packageDependencies": [
             ["@types/emscripten", "npm:1.39.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/geojson", [
+        ["npm:7946.0.7", {
+          "packageLocation": "./.yarn/cache/@types-geojson-npm-7946.0.7-22fd23fc31-b0a614f58a.zip/node_modules/@types/geojson/",
+          "packageDependencies": [
+            ["@types/geojson", "npm:7946.0.7"]
           ],
           "linkType": "HARD",
         }]
@@ -2840,6 +2874,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-dom-npm-16.9.8-9dde59da5d-53a223c026.zip/node_modules/@types/react-dom/",
           "packageDependencies": [
             ["@types/react-dom", "npm:16.9.8"],
+            ["@types/react", "npm:16.9.43"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react-simple-maps", [
+        ["npm:1.0.3", {
+          "packageLocation": "./.yarn/cache/@types-react-simple-maps-npm-1.0.3-3294dfc0c5-74ca110f64.zip/node_modules/@types/react-simple-maps/",
+          "packageDependencies": [
+            ["@types/react-simple-maps", "npm:1.0.3"],
+            ["@types/d3-geo", "npm:1.11.1"],
+            ["@types/geojson", "npm:7946.0.7"],
             ["@types/react", "npm:16.9.43"]
           ],
           "linkType": "HARD",
@@ -4115,13 +4161,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:14.0.27"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
+            ["@types/react-simple-maps", "npm:1.0.3"],
             ["@yarnpkg/pnpify", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.0"],
             ["browser-headers", "npm:0.4.1"],
             ["google-protobuf", "npm:3.12.4"],
             ["parcel", "npm:2.0.0-beta.1"],
+            ["prop-types", "npm:15.7.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
+            ["react-simple-maps", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.2"],
             ["ts-protoc-gen", "npm:0.12.0"],
             ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5b02a2"]
           ],
@@ -4554,6 +4603,120 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/csstype-npm-2.6.11-77160fd1b8-b5de145e84.zip/node_modules/csstype/",
           "packageDependencies": [
             ["csstype", "npm:2.6.11"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-array", [
+        ["npm:1.2.4", {
+          "packageLocation": "./.yarn/cache/d3-array-npm-1.2.4-37b8938a64-ab114c72cc.zip/node_modules/d3-array/",
+          "packageDependencies": [
+            ["d3-array", "npm:1.2.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-color", [
+        ["npm:1.4.1", {
+          "packageLocation": "./.yarn/cache/d3-color-npm-1.4.1-cd6dccad72-a579fdc2f4.zip/node_modules/d3-color/",
+          "packageDependencies": [
+            ["d3-color", "npm:1.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-dispatch", [
+        ["npm:1.0.6", {
+          "packageLocation": "./.yarn/cache/d3-dispatch-npm-1.0.6-afea222924-2bec4b1395.zip/node_modules/d3-dispatch/",
+          "packageDependencies": [
+            ["d3-dispatch", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-drag", [
+        ["npm:1.2.5", {
+          "packageLocation": "./.yarn/cache/d3-drag-npm-1.2.5-79f667b0ea-a924f590fc.zip/node_modules/d3-drag/",
+          "packageDependencies": [
+            ["d3-drag", "npm:1.2.5"],
+            ["d3-dispatch", "npm:1.0.6"],
+            ["d3-selection", "npm:1.4.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-ease", [
+        ["npm:1.0.6", {
+          "packageLocation": "./.yarn/cache/d3-ease-npm-1.0.6-3006aff4fd-15269a19b4.zip/node_modules/d3-ease/",
+          "packageDependencies": [
+            ["d3-ease", "npm:1.0.6"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-geo", [
+        ["npm:1.12.1", {
+          "packageLocation": "./.yarn/cache/d3-geo-npm-1.12.1-fbb760bdb1-e0fe99d832.zip/node_modules/d3-geo/",
+          "packageDependencies": [
+            ["d3-geo", "npm:1.12.1"],
+            ["d3-array", "npm:1.2.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-interpolate", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/d3-interpolate-npm-1.4.0-694efcdd27-beea08fb3a.zip/node_modules/d3-interpolate/",
+          "packageDependencies": [
+            ["d3-interpolate", "npm:1.4.0"],
+            ["d3-color", "npm:1.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-selection", [
+        ["npm:1.4.2", {
+          "packageLocation": "./.yarn/cache/d3-selection-npm-1.4.2-7dcf4c89d3-5b0df1824a.zip/node_modules/d3-selection/",
+          "packageDependencies": [
+            ["d3-selection", "npm:1.4.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-timer", [
+        ["npm:1.0.10", {
+          "packageLocation": "./.yarn/cache/d3-timer-npm-1.0.10-af1ad28ff9-e302132e1f.zip/node_modules/d3-timer/",
+          "packageDependencies": [
+            ["d3-timer", "npm:1.0.10"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-transition", [
+        ["npm:1.3.2", {
+          "packageLocation": "./.yarn/cache/d3-transition-npm-1.3.2-f851312368-13bbe22b0e.zip/node_modules/d3-transition/",
+          "packageDependencies": [
+            ["d3-transition", "npm:1.3.2"],
+            ["d3-color", "npm:1.4.1"],
+            ["d3-dispatch", "npm:1.0.6"],
+            ["d3-ease", "npm:1.0.6"],
+            ["d3-interpolate", "npm:1.4.0"],
+            ["d3-selection", "npm:1.4.2"],
+            ["d3-timer", "npm:1.0.10"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["d3-zoom", [
+        ["npm:1.8.3", {
+          "packageLocation": "./.yarn/cache/d3-zoom-npm-1.8.3-214b6b9ef9-a16611fecc.zip/node_modules/d3-zoom/",
+          "packageDependencies": [
+            ["d3-zoom", "npm:1.8.3"],
+            ["d3-dispatch", "npm:1.0.6"],
+            ["d3-drag", "npm:1.2.5"],
+            ["d3-interpolate", "npm:1.4.0"],
+            ["d3-selection", "npm:1.4.2"],
+            ["d3-transition", "npm:1.3.2"]
           ],
           "linkType": "HARD",
         }]
@@ -8730,6 +8893,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react-simple-maps", [
+        ["virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.2", {
+          "packageLocation": "./.yarn/$$virtual/react-simple-maps-virtual-0a00e96db0/0/cache/react-simple-maps-npm-2.1.2-d5627b282b-2be8984627.zip/node_modules/react-simple-maps/",
+          "packageDependencies": [
+            ["react-simple-maps", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:2.1.2"],
+            ["d3-geo", "npm:1.12.1"],
+            ["d3-selection", "npm:1.4.2"],
+            ["d3-zoom", "npm:1.8.3"],
+            ["prop-types", "npm:15.7.2"],
+            ["react", "npm:16.13.1"],
+            ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
+            ["topojson-client", "npm:3.1.0"]
+          ],
+          "packagePeers": [
+            "prop-types",
+            "react",
+            "react-dom"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["readable-stream", [
         ["npm:2.3.7", {
           "packageLocation": "./.yarn/cache/readable-stream-npm-2.3.7-77b22a9818-6e38265606.zip/node_modules/readable-stream/",
@@ -9845,6 +10029,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["to-regex-range", "npm:5.0.1"],
             ["is-number", "npm:7.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["topojson-client", [
+        ["npm:3.1.0", {
+          "packageLocation": "./.yarn/cache/topojson-client-npm-3.1.0-70e59c7f28-189471a743.zip/node_modules/topojson-client/",
+          "packageDependencies": [
+            ["topojson-client", "npm:3.1.0"],
+            ["commander", "npm:2.20.3"]
           ],
           "linkType": "HARD",
         }]

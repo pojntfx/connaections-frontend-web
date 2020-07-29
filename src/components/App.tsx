@@ -1,6 +1,7 @@
 import * as React from "react";
 import { LoginProvider } from "./LoginProvider";
 import { DataProvider } from "./DataProvider";
+import { ConnectionInterpreter } from "./ConnectionInterpreter";
 
 export interface IAppProps {
   clientId: string;
@@ -16,14 +17,10 @@ export const App: React.FC<IAppProps> = ({
     {({ token }) => (
       <DataProvider endpoint={endpoint} token={token}>
         {({ connection }) => (
-          <>
-            {connection.getSource().getCountrycode()},
-            {connection.getSource().getLatitude()},
-            {connection.getSource().getLongitude()} {`=>`}{" "}
-            {connection.getDst().getCountrycode()},
-            {connection.getDst().getLatitude()},
-            {connection.getDst().getLongitude()}
-          </>
+          <ConnectionInterpreter
+            connection={connection}
+            geoUrl="https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
+          />
         )}
       </DataProvider>
     )}
