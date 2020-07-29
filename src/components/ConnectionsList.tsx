@@ -3,7 +3,7 @@ import { Connection } from "../proto/generated/src/proto/connections_pb";
 import styled from "styled-components";
 
 export interface IConnectionsListProps {
-  connections: Connection[];
+  connections: [Connection, string][];
 }
 
 export const ConnectionsList: React.FC<IConnectionsListProps> = ({
@@ -20,22 +20,22 @@ export const ConnectionsList: React.FC<IConnectionsListProps> = ({
 
     <tbody>
       {connections.map((connection, index) => {
-        const src = connection.getSource();
-        const dst = connection.getDst();
+        const src = connection[0].getSource();
+        const dst = connection[0].getDst();
 
         return (
-          <tr key={index}>
-            <td>
+          <TableRow color={connection[1]} key={index}>
+            <TableData>
               {src.getCountrycode() +
                 (src.getCityname() != "" ? " " + src.getCityname() : "")}
               ({src.getIp()}:{src.getPort()})
-            </td>
-            <td>
+            </TableData>
+            <TableData>
               {dst.getCountrycode() +
                 (dst.getCityname() != "" ? " " + dst.getCityname() : "")}
               ({dst.getIp()}:{dst.getPort()})
-            </td>
-          </tr>
+            </TableData>
+          </TableRow>
         );
       })}
     </tbody>
@@ -45,4 +45,18 @@ export const ConnectionsList: React.FC<IConnectionsListProps> = ({
 const Table = styled.table`
   display: block;
   overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0 1rem;
+`;
+
+const TableRow = styled.tr<{ color: string }>`
+  background: ${(props) => props.color};
+  color: ${(props) =>
+    parseInt(props.color.replace("#", ""), 16) > 0xffffff / 2
+      ? "#000"
+      : "#fff"};
+`;
+
+const TableData = styled.td`
+  padding: 0.5rem;
 `;

@@ -50,6 +50,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "npm:14.0.27"
       ],
       [
+        "@types/randomcolor",
+        "npm:0.5.5"
+      ],
+      [
         "@types/react",
         "npm:16.9.43"
       ],
@@ -88,6 +92,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       [
         "prop-types",
         "npm:15.7.2"
+      ],
+      [
+        "randomcolor",
+        "npm:0.6.2"
       ],
       [
         "react",
@@ -134,6 +142,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/google-protobuf", "npm:3.7.2"],
             ["@types/lodash", "npm:4.14.158"],
             ["@types/node", "npm:14.0.27"],
+            ["@types/randomcolor", "npm:0.5.5"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/react-simple-maps", "npm:1.0.3"],
@@ -144,6 +153,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.19"],
             ["parcel", "npm:2.0.0-beta.1"],
             ["prop-types", "npm:15.7.2"],
+            ["randomcolor", "npm:0.6.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
@@ -2940,6 +2950,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/randomcolor", [
+        ["npm:0.5.5", {
+          "packageLocation": "./.yarn/cache/@types-randomcolor-npm-0.5.5-2c5f5073e8-29362f7ca8.zip/node_modules/@types/randomcolor/",
+          "packageDependencies": [
+            ["@types/randomcolor", "npm:0.5.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/react", [
         ["npm:16.9.43", {
           "packageLocation": "./.yarn/cache/@types-react-npm-16.9.43-ffdd276940-b9d4491463.zip/node_modules/@types/react/",
@@ -4300,6 +4319,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/google-protobuf", "npm:3.7.2"],
             ["@types/lodash", "npm:4.14.158"],
             ["@types/node", "npm:14.0.27"],
+            ["@types/randomcolor", "npm:0.5.5"],
             ["@types/react", "npm:16.9.43"],
             ["@types/react-dom", "npm:16.9.8"],
             ["@types/react-simple-maps", "npm:1.0.3"],
@@ -4310,6 +4330,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash", "npm:4.17.19"],
             ["parcel", "npm:2.0.0-beta.1"],
             ["prop-types", "npm:15.7.2"],
+            ["randomcolor", "npm:0.6.2"],
             ["react", "npm:16.13.1"],
             ["react-dom", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:16.13.1"],
             ["react-google-login", "virtual:3bcc3cfa05765848031eb3ed9d7ae40c2e6d0b19dc6022e31de302131594935ed17f4596eff1cfdf4d9430fcd53b2eb823e842a2b89de91b799da280cf418db7#npm:5.1.21"],
@@ -8990,6 +9011,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["randombytes", "npm:2.1.0"],
             ["safe-buffer", "npm:5.2.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["randomcolor", [
+        ["npm:0.6.2", {
+          "packageLocation": "./.yarn/cache/randomcolor-npm-0.6.2-6644bb5036-23758ada0b.zip/node_modules/randomcolor/",
+          "packageDependencies": [
+            ["randomcolor", "npm:0.6.2"]
           ],
           "linkType": "HARD",
         }]

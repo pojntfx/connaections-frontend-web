@@ -4,6 +4,8 @@ import { DataProvider } from "./DataProvider";
 import { ConnectionsMap } from "./ConnectionsMap";
 import { ConnectionsList } from "./ConnectionsList";
 import styled, { createGlobalStyle } from "styled-components";
+import randomColor from "randomcolor";
+import { Connection } from "../proto/generated/src/proto/connections_pb";
 
 export interface IAppProps {
   clientId: string;
@@ -18,40 +20,51 @@ export const App: React.FC<IAppProps> = ({
   <LoginProvider clientId={clientId} {...otherProps}>
     {({ token }) => (
       <DataProvider endpoint={endpoint} token={token}>
-        {({ connections, clearConnections }) => (
-          <>
-            <GlobalStyle />
+        {({ connections, clearConnections }) => {
+          const connectionsWithColors: [Connection, string][] = connections.map(
+            (connection, index) => [
+              connection,
+              randomColor({
+                seed: index,
+              }),
+            ]
+          );
 
-            <Header>
-              <h1>Connaections</h1>
-              <button onClick={clearConnections}>Clear connections</button>
-            </Header>
+          return (
+            <>
+              <GlobalStyle />
 
-            <Main>
-              <article>
-                <section id="map">
-                  <h2>Connection Map</h2>
-                  <ConnectionsMap
-                    connections={connections}
-                    geoUrl="https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
-                  />
-                </section>
-              </article>
+              <Header>
+                <h1>Connaections</h1>
+                <button onClick={clearConnections}>Clear connections</button>
+              </Header>
 
-              <Aside>
-                <section id="count">
-                  <h2>Connection Count</h2>
-                  <span>{connections.length} individual connections</span>
-                </section>
+              <Main>
+                <article>
+                  <section id="map">
+                    <h2>Connection Map</h2>
+                    <ConnectionsMap
+                      connections={connectionsWithColors}
+                      geoUrl="https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
+                    />
+                  </section>
+                </article>
 
-                <section id="list">
-                  <h2>Connection List</h2>
-                  <ConnectionsList connections={connections} />
-                </section>
-              </Aside>
-            </Main>
-          </>
-        )}
+                <Aside>
+                  <section id="count">
+                    <h2>Connection Count</h2>
+                    <span>{connections.length} individual connections</span>
+                  </section>
+
+                  <section id="list">
+                    <h2>Connection List</h2>
+                    <ConnectionsList connections={connectionsWithColors} />
+                  </section>
+                </Aside>
+              </Main>
+            </>
+          );
+        }}
       </DataProvider>
     )}
   </LoginProvider>

@@ -2402,6 +2402,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/randomcolor@npm:^0.5.5":
+  version: 0.5.5
+  resolution: "@types/randomcolor@npm:0.5.5"
+  checksum: 29362f7ca875951a496997b65cc0cc04edb73fdcadd7783ab84448c924e1559a94ca834650635fe8d0a5722159c4ac7b76b171d3a3e9fd9459272d3a3fa566ae
+  languageName: node
+  linkType: hard
+
 "@types/react-dom@npm:^16.9.8":
   version: 16.9.8
   resolution: "@types/react-dom@npm:16.9.8"
@@ -3610,6 +3617,7 @@ __metadata:
     "@types/google-protobuf": ^3.7.2
     "@types/lodash": ^4.14.158
     "@types/node": ^14.0.27
+    "@types/randomcolor": ^0.5.5
     "@types/react": ^16.9.43
     "@types/react-dom": ^16.9.8
     "@types/react-simple-maps": ^1.0.3
@@ -3620,6 +3628,7 @@ __metadata:
     lodash: ^4.17.19
     parcel: next
     prop-types: ^15.7.2
+    randomcolor: ^0.6.2
     react: ^16.13.1
     react-dom: ^16.13.1
     react-google-login: ^5.1.21
@@ -7774,6 +7783,13 @@ __metadata:
   dependencies:
     safe-buffer: ^5.1.0
   checksum: ede2693af09732ceab1c273dd70db787f34a7b8d95bab13f1aca763483c0113452a78e53d61ff18d393dcea586d388e01f198a5132a4a85cebba31ec54164b75
+  languageName: node
+  linkType: hard
+
+"randomcolor@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "randomcolor@npm:0.6.2"
+  checksum: 23758ada0bdd47277b4b2551ddd98d6cffd0653287d5c0adaccee6157ac50b09cdcf8f307aae715a6e96e89f0e6862eb81608b583f00d0211202d711ec65debb
   languageName: node
   linkType: hard
 
